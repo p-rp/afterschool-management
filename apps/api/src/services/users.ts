@@ -134,7 +134,7 @@ export const userService = {
         password: hashedPassword,
         firstName,
         lastName,
-        role: role || 'user',
+        role: (role || 'user') as any,
       })
       .returning();
 
@@ -173,7 +173,7 @@ export const userService = {
     if (input.email) updateData.email = input.email;
     if (input.firstName !== undefined) updateData.firstName = input.firstName;
     if (input.lastName !== undefined) updateData.lastName = input.lastName;
-    if (input.role) updateData.role = input.role;
+    if (input.role) updateData.role = input.role as any;
     if (input.isActive !== undefined) updateData.isActive = input.isActive;
 
     const [updatedUser] = await db

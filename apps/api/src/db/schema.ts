@@ -14,14 +14,6 @@ export const users = pgTable('users', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
-export const sessions = pgTable('sessions', {
-  id: serial('id').primaryKey(),
-  userId: serial('user_id').references(() => users.id).notNull(),
-  token: text('token').notNull(),
-  expiresAt: timestamp('expires_at').notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-});
-
 export const activityLog = pgTable('activity_log', {
   id: serial('id').primaryKey(),
   userId: serial('user_id').references(() => users.id),
@@ -31,31 +23,6 @@ export const activityLog = pgTable('activity_log', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
-export const trainers = pgTable('trainers', {
-  userId: serial('user_id').primaryKey().references(() => users.id, { onDelete: 'cascade', onUpdate: 'cascade' })
-});
-
-export const students = pgTable('students', {
-  userId: serial('user_id').primaryKey().references(() => users.id, { onDelete: 'cascade', onUpdate: 'cascade' })
-});
-
-export const parents = pgTable('parents', {
-  userId: serial('user_id').primaryKey().references(() => users.id, { onDelete: 'cascade', onUpdate: 'cascade' })
-});
-
-export const admin = pgTable('admin', {
-  userId: serial('user_id').primaryKey().references(() => users.id, { onDelete: 'cascade', onUpdate: 'cascade' })
-});
-
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
-export type Session = typeof sessions.$inferSelect;
 export type ActivityLog = typeof activityLog.$inferSelect;
-export type Trainer = typeof trainers.$inferSelect;
-export type NewTrainer = typeof trainers.$inferInsert;
-export type Student = typeof students.$inferSelect;
-export type NewStudent = typeof students.$inferInsert;
-export type Parent = typeof parents.$inferSelect;
-export type NewParent = typeof parents.$inferInsert;
-export type Admin = typeof admin.$inferSelect;
-export type NewAdmin = typeof admin.$inferInsert;

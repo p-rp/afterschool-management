@@ -41,7 +41,7 @@ export const authController = {
       userId: user.id,
       action: 'LOGIN',
       details: 'User logged in',
-      ipAddress: req.ip,
+      ipAddress: req.ip || 'unknown',
     });
 
     res.json({

@@ -45,14 +45,17 @@ export const sanitizeInput = (
   next: NextFunction
 ): void => {
   try {
-    if (req.body) {
+    if (req.body && typeof req.body === 'object') {
       req.body = sanitizeObject(req.body);
     }
-    if (req.query) {
-      req.query = sanitizeObject(req.query);
-    }
-    if (req.params) {
-      req.params = sanitizeObject(req.params);
+    if (req.query && typeof req.query === 'object') {
+      Object.keys(req.query).forEach(key => {
+        const sanitizedKey = sanitizeString(key);
+        if (sanitizedKey !== key && req.query) {
+          (req.query as any)[sanitizedKey] = sanitizeObject(req.query[key]);
+          delete (req.query as any)[key];
+        }
+      });
     }
     next();
   } catch (error) {
