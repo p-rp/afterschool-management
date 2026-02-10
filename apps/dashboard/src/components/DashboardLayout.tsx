@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Users, LogOut } from 'lucide-react';
 import { Button } from '../components/Button';
 import { useAuth } from '../contexts/AuthContext';
+import { LOGOS } from '@start-jr/assets';
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -22,8 +23,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Sidebar */}
       <aside className="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200">
         <div className="p-6">
-          <Link to="/dashboard" className="text-xl font-bold text-[hsl(210,60%,14%)]">
-            START Jr.
+          <Link to="/dashboard">
+            <img src={LOGOS.main} alt="Start Jr." className="h-12 w-auto" />
           </Link>
         </div>
 

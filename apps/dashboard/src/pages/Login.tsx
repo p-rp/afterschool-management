@@ -79,7 +79,7 @@ const Login: FC = () => {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 pl-10 transition-all duration-200 focus:ring-2 focus:ring-[hsl(0,100%,60%)]"
+                  className="h-12 pl-10 transition-all duration-200"
                   required
                 />
               </div>
@@ -98,7 +98,7 @@ const Login: FC = () => {
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="h-12 pl-10 pr-10 transition-all duration-200 focus:ring-2 focus:ring-[hsl(0,100%,60%)]"
+                  className="h-12 pl-10 pr-10 transition-all duration-200"
                   required
                 />
                 <button
