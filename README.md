@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="packages/assets/src/logos/logo-light.png" alt="Start Jr. Logo" width="200">
+  <img src="packages/assets/src/logos/logo-light.png" alt="Start Jr. Company Logo" width="200">
 </div>
 
-# START Jr.
+# After School Management System
 
 ## Description
 
-Start Jr. is a comprehensive Learning Management System (LMS) dashboard for startjr.com, designed to manage all users, track student learning progress, and provide administrative oversight. The platform serves as the central hub for administrators to manage the entire user lifecycle from registration to ongoing activity monitoring.
+The After School Management System is a comprehensive Learning Management System (LMS) dashboard for Start Jr, designed to manage all users, track student learning progress, and provide administrative oversight. The platform serves as the central hub for administrators to manage the entire user lifecycle from registration to ongoing activity monitoring.
 
 The dashboard enables administrators to manage user registrations, monitor real-time activity, view detailed analytics, and control access through role-based permissions. It provides a secure, scalable foundation for managing educational content delivery, user progress tracking, and administrative workflows.
 
@@ -36,7 +36,7 @@ The dashboard enables administrators to manage user registrations, monitor real-
 - **Express** - Node.js web framework
 - **TypeScript** - Type-safe JavaScript
 - **Drizzle ORM** - SQL toolkit and ORM
-- **PostgreSQL** - Database (via Supabase)
+- **PostgreSQL** - Database
 - **JWT** - Authentication tokens
 - **Swagger/OpenAPI** - API documentation
 - **Helmet** - Security headers
@@ -45,7 +45,7 @@ The dashboard enables administrators to manage user registrations, monitor real-
 ## Project Structure
 
 ```
-start-jr/
+afterschool-management/
 ├── apps/
 │   ├── dashboard/          # React dashboard application
 │   │   ├── src/
@@ -82,14 +82,14 @@ start-jr/
 
 - **Node.js** - Latest LTS version
 - **pnpm** - Fast, disk space efficient package manager
-- **PostgreSQL** - Database (can use Supabase for hosted solution)
+- **PostgreSQL** - Database
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd start-jr
+    git clone <repository-url>
+    cd afterschool-management
    ```
 
 2. **Install dependencies**
